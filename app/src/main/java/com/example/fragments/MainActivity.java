@@ -36,19 +36,22 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             isFragmentDisplayed =
                     savedInstanceState.getBoolean(STATE_FRAGMENT);
-            if (isFragmentDisplayed) {
+            if (isFragmentDisplayed && (findViewById(R.id.open_button) != null)) {
                 // If the fragment is displayed, change button to "close".
+                mButton = findViewById(R.id.open_button);
                 mButton.setText(R.string.close);
             }
         }
 
-        mButton =findViewById(R.id.open_button);
+
+        if (findViewById(R.id.open_button) != null) {
+            mButton = findViewById(R.id.open_button);
 
 
-        displayFragment();
+            displayFragment();
 
 
-        // Set the click listener for the button.
+//        // Set the click listener for the button.
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,9 +62,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        }
+
     }
-
-
 
 
 
