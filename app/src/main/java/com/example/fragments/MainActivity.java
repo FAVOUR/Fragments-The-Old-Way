@@ -26,13 +26,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
     private Button mButton;
+    private Button mExploreButton;
     private boolean isFragmentDisplayed = false;
     static final String STATE_FRAGMENT = "state_of_fragment";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mExploreButton= findViewById(R.id.explore);
         if (savedInstanceState != null) {
             isFragmentDisplayed =
                     savedInstanceState.getBoolean(STATE_FRAGMENT);
@@ -82,6 +83,17 @@ public class MainActivity extends AppCompatActivity {
         mButton.setText(R.string.close);
         // Set boolean flag to indicate fragment is open.
         isFragmentDisplayed = true;
+    }
+
+
+    public void displayExploreFragment(){
+
+        mExploreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 

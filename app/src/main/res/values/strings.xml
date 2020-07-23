@@ -40,4 +40,5 @@
 
     <!-- Text for the exception message in FragmentCommunicate. -->
     <string name="exception_message">must implement OnFragmentInteractionListener</string>
+    <string name="explore">Explore</string>
 </resources>

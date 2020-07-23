@@ -35,15 +35,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/beatles_anthology_box"/>
 
+<!--    TODO Work on the ability of the buttons to resize -->
     <Button
         android:id="@+id/open_button"
-        android:layout_width="72dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="@dimen/heading_top_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/button_left_margin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView" />
+    <!--    TODO Work on the ability of the buttons to resize -->
 
+    <Button
+        android:id="@+id/explore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/explore"
+        android:layout_marginTop="@dimen/heading_top_margin"
+        app:layout_constraintTop_toBottomOf="@id/open_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/scroll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
     <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
@@ -60,6 +72,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView"/>
 
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginRight="@dimen/standard_margin"
