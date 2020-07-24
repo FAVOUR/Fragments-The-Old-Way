@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_explore.*
 import kotlinx.android.synthetic.main.fragment_explore.view.*
@@ -40,7 +41,13 @@ class ExploreFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_explore, container, false)
           moveToSecondFrag.setOnClickListener {
-
+              val exploreFragment = newInstance()
+              val fragmentManager: FragmentManager = activity!!.supportFragmentManager!!
+              fragmentManager.beginTransaction().apply {
+                  add(R.id.container,exploreFragment)
+                  addToBackStack(ExploreFragment::class.simpleName)
+                  commit()
+              }
           }
         return view
     }
