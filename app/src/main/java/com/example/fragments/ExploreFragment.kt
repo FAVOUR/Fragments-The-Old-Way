@@ -40,12 +40,12 @@ class ExploreFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_explore, container, false)
-          moveToSecondFrag.setOnClickListener {
-              val exploreFragment = newInstance()
+          view.moveToSecondFrag.setOnClickListener {
+              val secondFragmentFragment = SecondFragmentFragment.newInstance()
               val fragmentManager: FragmentManager = activity!!.supportFragmentManager!!
               fragmentManager.beginTransaction().apply {
-                  add(R.id.container,exploreFragment)
-                  addToBackStack(ExploreFragment::class.simpleName)
+                  replace(R.id.container,secondFragmentFragment)
+                  addToBackStack(SecondFragmentFragment::class.simpleName)
                   commit()
               }
           }

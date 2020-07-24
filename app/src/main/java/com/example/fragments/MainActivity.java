@@ -16,6 +16,7 @@
 
 package com.example.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        mExploreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), IntroductoryActivity.class));
+
+            }
+        });
+
 
         if (findViewById(R.id.open_button) != null) {
             mButton = findViewById(R.id.open_button);
@@ -67,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 
 
 
