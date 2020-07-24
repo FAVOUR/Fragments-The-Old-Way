@@ -15,7 +15,7 @@ class IntroductoryActivity : AppCompatActivity() {
     }
 
 
-    fun setupFragment() {
+    private fun setupFragment() {
             val exploreFragment = newInstance()
             val fragmentManager: FragmentManager = supportFragmentManager
             fragmentManager.beginTransaction().apply {
