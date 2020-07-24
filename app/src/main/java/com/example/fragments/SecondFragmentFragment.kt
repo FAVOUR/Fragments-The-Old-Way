@@ -5,23 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.activity_main.view.*
-import kotlinx.android.synthetic.main.fragment_explore.*
-import kotlinx.android.synthetic.main.fragment_explore.view.*
-import kotlinx.android.synthetic.main.fragment_explore.view.moveToSecondFrag
 
-// TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ExploreFragment.newInstance] factory method to
+ * Use the [SecondFragmentFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ExploreFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+class SecondFragmentFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
@@ -38,17 +32,7 @@ class ExploreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_explore, container, false)
-          moveToSecondFrag.setOnClickListener {
-
-          }
-        return view
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-
+        return inflater.inflate(R.layout.fragment_second_fragment, container, false)
     }
 
     companion object {
@@ -58,12 +42,11 @@ class ExploreFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ExploreFragment.
+         * @return A new instance of fragment SecondFragmentFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String="", param2: String="") =
-            ExploreFragment().apply {
+        fun newInstance(param1: String="", param2: String="m") =
+            SecondFragmentFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
