@@ -1,6 +1,7 @@
 package com.example.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,25 +39,29 @@ class ExploreFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.e("Here","ExploreFragment")
+
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_explore, container, false)
-          view.moveToSecondFrag.setOnClickListener {
-              val secondFragmentFragment = SecondFragmentFragment.newInstance()
-              val fragmentManager: FragmentManager = activity!!.supportFragmentManager!!
-              fragmentManager.beginTransaction().apply {
-                  replace(R.id.container,secondFragmentFragment)
-                  addToBackStack(SecondFragmentFragment::class.simpleName)
-                  commit()
-              }
-          }
+
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        moveToSecondFrag.setOnClickListener {
+            val secondFragmentFragment = SecondFragmentFragment.newInstance()
+            val fragmentManager: FragmentManager = activity!!.supportFragmentManager!!
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.container,secondFragmentFragment)
+                addToBackStack(secondFragmentFragment::class.simpleName)
+                commit()
+            }
+        }
     }
+  
 
     companion object {
         /**
