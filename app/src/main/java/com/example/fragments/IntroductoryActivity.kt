@@ -27,7 +27,6 @@ class IntroductoryActivity : AppCompatActivity() {
                                                          commit()
                                                          }
     }
-
     override fun onResume() {
         super.onResume()
         Log.e("Here OnResume","IntroFragment")
